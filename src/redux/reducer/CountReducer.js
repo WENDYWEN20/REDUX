@@ -1,12 +1,15 @@
-export default function countReducer(state = 0, action) {
+const InitialState ={value: 0}
+export default function countReducer(state = InitialState, action) {
   const { type, payload } = action;
   switch (type) {
     case "INCREMENT":
-      return  state + 1 ;
+      return  {value: state.value + 1} ;
     case "DECREMENT":
-      return  state - 1 ;
+      return  {value: state.value - 1 };
     case "RESET":
-      return 0;
+      return InitialState;
+    case "AMOUNT":
+        return {value: state.value + payload}
     default:
       return state;
   }
