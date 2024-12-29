@@ -12,6 +12,7 @@ function App() {
 const theme=useSelector((state)=>
     {return state.themeReducer})
   const todos = useSelector((state) => state.todoReducer);
+  
   const increment=()=>{
     dispatch({type:'INCREMENT'})
   }
