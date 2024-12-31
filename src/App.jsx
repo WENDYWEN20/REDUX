@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
+import ClassComponentRedux from './components/ClassComponentRedux'
 function App() {
   const dispatch=useDispatch()
   const count=useSelector((state)=>
@@ -12,7 +13,7 @@ function App() {
 const theme=useSelector((state)=>
     {return state.themeReducer})
   const todos = useSelector((state) => state.todoReducer);
-  
+
   const increment=()=>{
     dispatch({type:'INCREMENT'})
   }
@@ -38,6 +39,8 @@ const theme=useSelector((state)=>
       <TodoList />
       <AddTodo/>
       <h3>Remaining todos: {todos.length}</h3>
+  
+      <ClassComponentRedux/>
     </>
   );
 }
