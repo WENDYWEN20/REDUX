@@ -2,6 +2,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
 import ClassComponentRedux from './components/ClassComponentRedux'
+import TodoListAPI from './components/TodoListAPI'
+import AddTodoAPI from './components/AddTodoAPI'
 function App() {
   const dispatch=useDispatch()
   const count=useSelector((state)=>
@@ -41,6 +43,8 @@ const theme=useSelector((state)=>
       <h3>Remaining todos: {todos.length}</h3>
   
       <ClassComponentRedux/>
+      <TodoListAPI />
+      <AddTodoAPI/>
     </>
   );
 }

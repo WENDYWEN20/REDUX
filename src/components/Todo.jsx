@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 export default function Todo({ todo }) {
   const { id, title, completed } = todo;
   const [edit, setEdit] = useState(false);
@@ -18,6 +19,7 @@ export default function Todo({ todo }) {
   const saveEdit = (id) => {
     dispatch({ type: "EDIT_TODO", payload: { ...todo, title: newTask } });
     setEdit(false);
+    console.log(id)
   };
 
   return (
